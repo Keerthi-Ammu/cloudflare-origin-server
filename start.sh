@@ -7,4 +7,4 @@ chmod +x cloudflared
 gunicorn app:app --bind 0.0.0.0:$PORT &
 
 # Start Cloudflare Tunnel
-./cloudflared service install $TUNNEL_TOKEN
+./cloudflared tunnel --no-autoupdate run --token $TUNNEL_TOKEN
